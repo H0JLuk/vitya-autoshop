@@ -138,11 +138,12 @@ ol {
 #login-form .field1 {
   padding-top: 5px;
   height: 28px;
+  border: 0;
+  background: transparent;
 }
 #login-form .field1 a {
   text-decoration: none;
   display: inline-block;
-  float: right;
   color: #35b3d8;
   cursor: pointer;
   margin-top: -4px;

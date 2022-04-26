@@ -81,25 +81,26 @@
         <div class="wrapper">
           <div class="col-1">
             <h3><b>Contact</b> Form</h3>
-            <form id="contacts-form" action="#">
+            <form action="/api/feedback" method="POST" id="contacts-form">
               <fieldset>
                 <div class="field">
                   <label>Your Name:</label>
-                  <input type="text" value="" />
+                  <input type="text" name="name" minlength="2" required value="" />
                 </div>
                 <div class="field">
                   <label>Your E-mail:</label>
-                  <input type="text" value="" />
+                  <input type="email" name="email" required value="" />
                 </div>
                 <div class="field">
                   <label>Your Website:</label>
-                  <input type="text" value="" />
+                  <input type="text" name="website" required value="" />
                 </div>
                 <div class="field">
                   <label>Your Message:</label>
-                  <textarea cols="1" rows="1"></textarea>
+                  <textarea cols="1" rows="1" name="message" minlength="5" required></textarea>
                 </div>
-                <div class="wrapper"><a href="#" class="link1"><em><b>SUBMIT</b></em></a></div>
+                <button style="width: auto; border: none; margin-left: 97px" class="wrapper"><a href="#"
+                    class="link1"><em><b>SUBMIT</b></em></a></button>
               </fieldset>
             </form>
           </div>
@@ -147,7 +148,7 @@
                               <label>Password:</label>
                               <input name="password" type="password" />
                             </div>
-                            <button class="field1" onclick="document.forms[1].submit()">
+                            <button class="field1" type="submit">
                               <a><em><b>
                                     Log In<span>Log In</span>
                                   </b></em></a>

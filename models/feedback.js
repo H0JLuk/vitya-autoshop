@@ -3,7 +3,12 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Feedback extends Model {
-    static associate(models) {}
+    static associate(models) {
+      this.belongsTo(models.User, {
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
+      });
+    }
   }
 
   Feedback.init(
