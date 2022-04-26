@@ -16,6 +16,8 @@ module.exports = {
           description: 'Best russian car',
           photo:
             'https://www.saloncentr.ru/uploads/new_car/2683/colors/largecard_7-belyy-beloe-oblako_1642265373.png',
+          color: 'Белый',
+          type: 'Седан',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -24,6 +26,8 @@ module.exports = {
           description: 'American car',
           photo:
             'https://www.avtogermes.ru/images/marks/jeep/grand-cherokee/iv-wk2-restajling/colors/pxj/e86ca99c7d8a3b9c0bbc7e316683207b.png',
+          color: 'Черный',
+          type: 'Внедорожник',
           createdAt: new Date(),
           updatedAt: new Date(),
         },

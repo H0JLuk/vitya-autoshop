@@ -87,7 +87,14 @@
                 <li><img src="<%= car.photo %>" alt="car photo" /><a>
                     <%= car.name %>
                   </a><br />
-                  <%= car.description %>
+                  <a>Color: </a>
+                  <%= car.color %>
+                    <br />
+                    <a>Type: </a>
+                    <%= car.type %>
+                      <br />
+                      <a>Description: </a>
+                      <%= car.description %>
                 </li>
                 <% } %>
             </ul>
