@@ -29,9 +29,9 @@
         <div class="fleft"><a href="#"><img src="images/logo.gif" alt="" /></a></div>
         <div class="fright">
           <ul>
-            <li><a href="#"><img src="images/icon1.gif" alt="" /></a></li>
-            <li><a href="#"><img src="images/icon2.gif" alt="" /></a></li>
-            <li><a href="#"><img src="images/icon3.gif" alt="" /></a></li>
+            <li><a href="/"><img src="images/icon1.gif" alt="" /></a></li>
+            <li><a href="/contact-us"><img src="images/icon2.gif" alt="" /></a></li>
+            <li><a href="/articles"><img src="images/icon3-act.gif" alt="" /></a></li>
           </ul>
         </div>
       </div>
@@ -83,18 +83,13 @@
           <div class="col-1">
             <h3><b>Recent</b> Articles</h3>
             <ul class="list">
-              <li><img src="images/3page-img1.jpg" alt="" /><a href="/articles/1">Article 1</a><br />
-                Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu
-                sempor...</li>
-              <li><img src="images/3page-img2.jpg" alt="" /><a href="/articles/2">Article 2</a><br />
-                Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu
-                sempor...</li>
-              <li><img src="images/3page-img3.jpg" alt="" /><a href="/articles/3">Article 3</a><br />
-                Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu
-                sempor...</li>
-              <li><img src="images/3page-img4.jpg" alt="" /><a href="/articles/4">Article 4</a><br />
-                Eusus consequam vitae habitur amet nullam vitae condis phasellus sed justo. Orcivel mollis intesque eu
-                sempor...</li>
+              <% for (const article of articles) { %>
+                <li><img src="<%= article.photo %>" alt="article photo" /><a href="/articles/<%= article.id %>">
+                    <%= article.title %>
+                  </a><br />
+                  <%= article.content.slice(0, 120) %>...
+                </li>
+                <% } %>
             </ul>
           </div>
           <div class="col-2">
@@ -105,12 +100,15 @@
                     <div class="inner">
                       <h4><b>Latest</b> News</h4>
                       <ul class="news">
-                        <li><a href="#">May 21, 2010</a>
-                          <p>Lorem ipsum dolor sit amet, coisectur adipisicing elit, sed doeiusmo.</p>
-                        </li>
-                        <li><a href="#">May 12, 2010</a>
-                          <p>Ut enim ad minim veniam, qnostrud exercitation ullamco.</p>
-                        </li>
+                        <% for (const article of lastArticles) { %>
+                          <li><a href="/articles/<%= article.id %>">
+                              <%= new Date(article.createdAt).toDateString() %>
+                            </a>
+                            <p>
+                              <%= article.content.slice(0, 70) %>...
+                            </p>
+                          </li>
+                          <% } %>
                       </ul>
                     </div>
                   </div>
@@ -122,27 +120,30 @@
                 <div class="left-bot-corner">
                   <div class="inner">
                     <h4><b>Login</b> Form</h4>
-                    <form action="#" id="login-form">
-                      <fieldset>
-                        <div class="field">
-                          <label>Username:</label>
-                          <input type="text" />
-                        </div>
-                        <div class="field">
-                          <label>Password:</label>
-                          <input type="password" />
-                        </div>
-                        <div class="field1">
-                          <label class="extra">Remember Me:</label>
-                          <input type="checkbox" class="extra" />
-                          <a href="#"><em><b>Log In<span>Log In</span></b></em></a>
-                        </div>
-                        <ul>
-                          <li><a href="#">Forgot your password?</a></li>
-                          <li class="last"><a href="#">Register</a></li>
-                        </ul>
-                      </fieldset>
-                    </form>
+
+                    <% if (user) { %>
+                      <h1 style="margin-bottom: 20px; color: #fff">Username: <%= user.username %>
+                      </h1>
+                      <a href="/api/logout" style="color: #fff; font-size: 18px">Log out</a>
+                      <% } else { %>
+                        <form action="/api/login" method="POST" id="login-form">
+                          <fieldset>
+                            <div class="field">
+                              <label>Username:</label>
+                              <input name="username" type="text" />
+                            </div>
+                            <div class="field">
+                              <label>Password:</label>
+                              <input name="password" type="password" />
+                            </div>
+                            <button class="field1" onclick="document.forms[0].submit()">
+                              <a><em><b>
+                                    Log In<span>Log In</span>
+                                  </b></em></a>
+                            </button>
+                          </fieldset>
+                        </form>
+                        <% } %>
                   </div>
                 </div>
               </div>
