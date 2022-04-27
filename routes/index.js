@@ -61,4 +61,29 @@ router.get('/about-us', async (req, res, next) => {
   });
 });
 
+router.get('/admin', async (req, res, next) => {
+  const cars = await Car.findAll();
+  res.render('admin', { cars });
+});
+
+router.get('/admin/car', async (req, res, next) => {
+  const { mode, id } = req.query;
+
+  if (mode === 'edit') {
+    const car = await Car.findByPk(id);
+    if (!car) return res.redirect('/admin');
+    res.render('admin-car', {
+      mode: 'Edit',
+      car,
+      formAction: `/api/car/edit/${id}`,
+    });
+  }
+
+  res.render('admin-car', {
+    mode: 'Create',
+    car: {},
+    formAction: '/api/car/create',
+  });
+});
+
 module.exports = router;

@@ -530,6 +530,7 @@ h4 b {
   position: absolute;
   left: 0;
   top: 142px;
+  pointer-events: none;
 }
 #content {
   padding-bottom: 30px;
@@ -612,4 +613,29 @@ h4 b {
 }
 a {
   outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+button.nice-button {
+  position: relative;
+  padding: 5px 10px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+button.nice-button {
+  transition: all 0.3s ease;
+}
+button.nice-button:hover {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+}
+button.nice-button a {
+  position: absolute;
+  inset: 0;
 }
