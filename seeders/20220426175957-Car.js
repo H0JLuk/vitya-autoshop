@@ -14,8 +14,7 @@ module.exports = {
         {
           name: 'Lada Granta',
           description: 'Best russian car',
-          photo:
-            'https://www.saloncentr.ru/uploads/new_car/2683/colors/largecard_7-belyy-beloe-oblako_1642265373.png',
+          photo: 'https://avatars.mds.yandex.net/get-autoru-vos/2160455/433c97d59d7a1278136052edeb6c93b9/1200x900',
           color: 'Белый',
           type: 'Седан',
           createdAt: new Date(),
@@ -24,15 +23,41 @@ module.exports = {
         {
           name: 'Jeep Grand Cherokee',
           description: 'American car',
-          photo:
-            'https://www.avtogermes.ru/images/marks/jeep/grand-cherokee/iv-wk2-restajling/colors/pxj/e86ca99c7d8a3b9c0bbc7e316683207b.png',
+          photo: 'https://avatars.mds.yandex.net/get-autoru-vos/2155199/15aeb514a2e27ea75e8c3c9485c709d3/1200x900',
           color: 'Черный',
           type: 'Внедорожник',
           createdAt: new Date(),
           updatedAt: new Date(),
         },
+        {
+          name: 'Toyota Alphard',
+          description: 'Японский автомобиль',
+          photo: 'https://avatars.mds.yandex.net/get-autoru-vos/1541975/667bf70c22fbf3145a39e2830430b86d/1200x900n',
+          color: 'Белый',
+          type: 'Минивэн',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Honda Accord',
+          description: 'Японский автомобиль',
+          photo: 'https://avatars.mds.yandex.net/get-autoru-vos/2161339/d525b93af43f5277106c523e26f7acde/1200x900',
+          color: 'Красный',
+          type: 'Седан',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          name: 'Lexus LX',
+          description: 'Японский автомобиль',
+          photo: 'https://static.tildacdn.com/tild3736-3935-4362-a635-343236623630/IMG_0821-.jpg',
+          color: 'Белый',
+          type: 'Внедорожник',
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
       ],
-      {},
+      {}
     );
   },
 
